@@ -11,6 +11,8 @@ import com.mario.baseadapter.demo.data.AnalogData;
 import com.mario.baseadapter.demo.image.CustomImageLoader;
 import com.mario.baseadapter.demo.util.RxSchedulers;
 import com.mario.baseadapter.holder.VBaseHolderHelper;
+import com.mario.baseadapter.listener.OnItemChildClickListener;
+import com.mario.baseadapter.listener.OnItemClickListener;
 import com.scwang.smartrefresh.layout.api.RefreshLayout;
 import com.scwang.smartrefresh.layout.listener.OnLoadmoreListener;
 import com.scwang.smartrefresh.layout.listener.OnRefreshListener;
@@ -40,7 +42,8 @@ public class EmptyActivity extends BaseRecyclerActivity<String> {
         mBaseAdapter = new VBaseAdapter<String>(R.layout.recyc_one_item) {
             @Override
             protected void onBindItem(VBaseHolderHelper helper, String s, int position) {
-                helper.setText(R.id.tvItem,s);
+                helper.setText(R.id.tvItem,s)
+                .setItemChildClickListener(R.id.imgItem);
             }
         };
         addEmptyView();//添加头或者尾部文件需要在addAdapter之前
@@ -59,6 +62,18 @@ public class EmptyActivity extends BaseRecyclerActivity<String> {
             @Override
             public void onLoadmore(RefreshLayout refreshlayout) {
                 loadData(false);
+            }
+        });
+        mBaseAdapter.addOnItemClickListener(new OnItemClickListener<String>() {
+            @Override
+            public void onItemClick(View view, int i, String s) {
+                showToast(s);
+            }
+        });
+        mBaseAdapter.addOnItemChildClickListener(new OnItemChildClickListener() {
+            @Override
+            public void onItemChildClick(View view, int i) {
+                showToast("this is item : " + i+" say ,I'm a image ");
             }
         });
     }

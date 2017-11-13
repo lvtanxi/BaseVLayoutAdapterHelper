@@ -16,6 +16,10 @@ public class CustomImageLoader extends ImageLoader {
 
     @Override
     public void displayImage(Context context, Object path, ImageView imageView) {
+        loadImage(context,path.toString(),imageView);
+    }
+
+    public static void loadImage(Context context, String path, ImageView imageView){
         GlideApp.with(context).load(path).centerCrop().diskCacheStrategy(DiskCacheStrategy.ALL).into
                 (imageView);
     }

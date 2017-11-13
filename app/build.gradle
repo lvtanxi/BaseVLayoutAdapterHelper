@@ -29,6 +29,7 @@ dependencies {
     annotationProcessor 'com.github.bumptech.glide:compiler:4.3.0'
     implementation 'com.scwang.smartrefresh:SmartRefreshLayout:1.0.3'
     implementation 'com.github.lvtanxi:BaseVLayoutAdapterHelper:v1.0.0'
+    implementation 'com.google.code.gson:gson:2.8.0'
     implementation ('com.alibaba.android:vlayout:1.2.2@aar') {
         transitive = true
     }

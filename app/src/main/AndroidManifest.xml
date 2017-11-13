@@ -17,6 +17,9 @@
             </intent-filter>
         </activity>
         <activity android:name=".ui.EmptyActivity"/>
+        <activity android:name=".ui.HeraderAndFooterActivity"/>
+        <activity android:name=".ui.SectionedActivity"/>
+        <activity android:name=".ui.TaobaoActivity"/>
     </application>
 
 </manifest>
