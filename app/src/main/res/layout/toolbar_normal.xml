@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge>
+
+    <android.support.v7.widget.Toolbar
+        style="@style/ToolbarStyle">
+
+        <RelativeLayout
+            style="@style/ToolbarRelat">
+
+            <TextView
+                style="@style/MatchWrap.ToolbarTitle"/>
+
+            <TextView
+                style="@style/WrapMatch.ToolbarMore"/>
+
+        </RelativeLayout>
+    </android.support.v7.widget.Toolbar>
+</merge>

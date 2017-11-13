@@ -1,0 +1,191 @@
+{
+  "banner": {
+    "pic_url": [
+      "https://aecpm.alicdn.com/tps/i2/TB10vPXKpXXXXacXXXXvKyzTVXX-520-280.jpg",
+      "https://img.alicdn.com/tfs/TB1ibsGXwMPMeJjy1XcXXXpppXa-520-280.jpg_q90",
+      "https://img.alicdn.com/simba/img/TB1g_TJOVXXXXbUXFXXSutbFXXX.jpg",
+      "https://img.alicdn.com/tfs/TB1xrgFXwoQMeJjy0FoXXcShVXa-520-280.jpg_q90"
+    ]
+  },
+  "grid": [
+    {
+      "function": "天猫",
+      "pic_url": "https://img.alicdn.com/tps/TB1.8SJPXXXXXc4XXXXXXXXXXXX-200-200.png_60x60.jpg"
+    },
+    {
+      "function": "聚划算",
+      "pic_url": "https://img.alicdn.com/tps/TB1.8SJPXXXXXc4XXXXXXXXXXXX-200-200.png_60x60.jpg"
+    },
+    {
+      "function": "天猫国际",
+      "pic_url": "https://img.alicdn.com/tps/TB1rbMePFXXXXXFaXXXXXXXXXXX-70-70.png_60x60.jpg"
+    },
+    {
+      "function": "外卖",
+      "pic_url": "https://img.alicdn.com/tps/TB1rbMePFXXXXXFaXXXXXXXXXXX-70-70.png_60x60.jpg"
+    },
+    {
+      "function": "天猫超市",
+      "pic_url": "https://img.alicdn.com/tps/TB1rbMePFXXXXXFaXXXXXXXXXXX-70-70.png_60x60.jpg"
+    },
+    {
+      "function": "土豆",
+      "pic_url": "https://img.alicdn.com/tps/TB1.8SJPXXXXXc4XXXXXXXXXXXX-200-200.png_60x60.jpg"
+    },
+    {
+      "function": "肥猪旅行",
+      "pic_url": "https://img.alicdn.com/tps/TB1rbMePFXXXXXFaXXXXXXXXXXX-70-70.png_60x60.jpg"
+    },
+    {
+      "function": "领金币",
+      "pic_url": "https://img.alicdn.com/tps/TB1.8SJPXXXXXc4XXXXXXXXXXXX-200-200.png_60x60.jpg"
+    },
+    {
+      "function": "拍卖",
+      "pic_url": "https://img.alicdn.com/tps/TB1.8SJPXXXXXc4XXXXXXXXXXXX-200-200.png_60x60.jpg"
+    },
+    {
+      "function": "分类",
+      "pic_url": "https://img.alicdn.com/tps/TB1rbMePFXXXXXFaXXXXXXXXXXX-70-70.png_60x60.jpg"
+    }
+  ],
+  "headlines": [
+    {
+      "url_pic": "https://img.alicdn.com/imgextra/i1/2240767867/TB2TXdNbBcHL1JjSZJiXXcKcpXa_!!2240767867-0-beehive-scenes.jpg_60x60q90.jpg"
+    }
+  ],
+  "haohuo": [
+    "https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1504086658890&di=c2c4f13cf461cf9d96d19ddd1ababd83&imgtype=0&src=http%3A%2F%2Fpic.58pic.com%2F58pic%2F17%2F38%2F06%2F31v58PICKB5_1024.jpg",
+    "https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1504086706511&di=754383109fff978779ccb996e0b31db4&imgtype=0&src=http%3A%2F%2Fwww.kaitao.cn%2Fdata%2Fupload%2Fueditor%2F20161003%2F57f201e593154.jpg",
+    "https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1504086713612&di=9885ec5cd2c5938a3196cbd70e1484ae&imgtype=0&src=http%3A%2F%2Fpic2.cxtuku.com%2F00%2F16%2F20%2Fb373606d0d6c.jpg",
+    "https://img.alicdn.com/tfs/TB1t9v9RFXXXXaCXXXXXXXXXXXX-360-280.jpg_180x180q90.jpg",
+    "https://f10.baidu.com/it/u=1571403070,2974482900&fm=72"
+  ],
+  "force": [
+    "https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1504085695335&di=9b3b9765698fcf56d8492dbb033c70d3&imgtype=0&src=http%3A%2F%2Fxiangyouhui.cn%2Fuploads%2F201503%2Ftaobao20150319h01.jpg72180996-a276-d5ed-cea2-e0a811574765.jpg"
+  ],
+  "tmarket": [
+    {
+      "pic_url": "http://img5.imgtn.bdimg.com/it/u=2020601487,1415821136&fm=26&gp=0.jpg"
+    },
+    {
+      "pic_url": "cohttp://img5.imgtn.bdimg.com/it/u=2020601487,1415821136&fm=26&gp=0.jpgm"
+    },
+    {
+      "pic_url": "cohttp://img5.imgtn.bdimg.com/it/u=2020601487,1415821136&fm=26&gp=0.jpgm"
+    },
+    {
+      "pic_url": "cohttp://img5.imgtn.bdimg.com/it/u=2020601487,1415821136&fm=26&gp=0.jpgm"
+    },
+    {
+      "pic_url": "cohttp://img5.imgtn.bdimg.com/it/u=2020601487,1415821136&fm=26&gp=0.jpgm"
+    },
+    {
+      "pic_url": "cohttp://img5.imgtn.bdimg.com/it/u=2020601487,1415821136&fm=26&gp=0.jpgm"
+    }
+  ],
+  "watercargo": [
+    {
+      "price": "27.5",
+      "title": "潮人新品风骚必备浪荡有理",
+      "pic_url": "https://img.alicdn.com/imgextra/i3/93/TB2Qt0WXHsTMeJjy1zbXXchlVXa_!!93-0-luban.jpg_290x290q90.jpg",
+      "buynum": "3582"
+    },
+    {
+      "price": "33",
+      "title": "秒杀狼牙棒为啥我的王者还是铂金",
+      "pic_url": "https://img.alicdn.com/simba/img/TB19GO2SXXXXXXmaXXXSutbFXXX.jpg",
+      "buynum": "3967"
+    },
+    {
+      "price": "99.3",
+      "title": "昨天晚上又被坑了两把娃哈哈我的王者荣耀啊啊",
+      "pic_url": "https://img.alicdn.com/imgextra/i4/5/TB21NsdpVXXXXaOXXXXXXXXXXXX_!!5-0-yamato.jpg_210x1000q90.jpg",
+      "buynum": "9999"
+    },
+    {
+      "price": "88.2",
+      "title": "为什么淘宝没有卖铭文的",
+      "pic_url": "https://img.alicdn.com/imgextra/i2/130/TB2XmnXX6mfF1JjSspcXXXZMXXa_!!130-0-luban.jpg_200x200q90.jpg",
+      "buynum": "999"
+    },
+    {
+      "price": "54.9",
+      "title": "华为手机很华为小米手机很香",
+      "pic_url": "https://img.alicdn.com/imgextra/i2/159/TB2yX48azJTMKJjSZFPXXbHUFXa_!!159-2-luban.png_200x200q90.jpg",
+      "buynum": "3278"
+    },
+    {
+      "price": "28",
+      "title": "我把我前女友的电话放里面了你们谁找得到",
+      "pic_url": "https://img.alicdn.com/imgextra/i4/98/TB2h5t.XNeEJuJjy1XaXXXPhVXa_!!98-0-luban.jpg_200x200q90.jpg",
+      "buynum": "0"
+    },
+    {
+      "price": "179",
+      "title": "VIVO手机好还是OPPO手机好他们好像是一家吧",
+      "pic_url": "https://img.alicdn.com/imgextra/i1/43/TB2TIcLXBUSMeJjSszbXXberFXa_!!43-2-luban.png_200x200q90.jpg",
+      "buynum": "8888"
+    },
+    {
+      "price": "23",
+      "title": "条纹衬衫裙相信大家都不陌生 但是每款衬衫裙都有自己的小特色展现不一样的风格 这款衬衫裙我最爱的就是裙摆的拼接设计 增加",
+      "pic_url": "https://img.alicdn.com/imgextra/i2/711221390/TB2iloipYXlpuFjSszfXXcSGXXa_!!711221390-2-beehive-scenes.png_290x10000.jpg",
+      "buynum": "5634"
+    },
+    {
+      "price": "19",
+      "title": "居家开仓日潮男必备买了上最强王者",
+      "pic_url": "https://img.alicdn.com/imgextra/i2/21/TB2AwI3XDZRMeJjSspkXXXGpXXa_!!21-0-luban.jpg_200x200q90.jpg",
+      "buynum": "879"
+    },
+    {
+      "price": "17",
+      "title": "加厚面料 modern house 大象造型韩式立体贴布绣床头靠背靠枕 ",
+      "pic_url": "https://gw.alicdn.com/bao/uploaded/i2/TB1GR2oQXXXXXXQapXXYXGcGpXX_M2.SS2_280x380xz.jpg",
+      "buynum": "3298"
+    },
+    {
+      "price": "68",
+      "title": "美式摩天轮相框摆件创意家居装饰品咖啡厅酒柜电视柜房间卧室摆设 ",
+      "pic_url": "https://gw.alicdn.com/bao/uploaded/i8/TB1jfMBQXXXXXajXVXXXXXXXXXX_!!0-item_pic.jpg_280x380xz.jpg",
+      "buynum": "110"
+    },
+    {
+      "price": "73",
+      "title": "秋装女装韩版原宿风背后字母宽松长袖T恤基础款纯色学生打底上衣 ",
+      "pic_url": "https://gw.alicdn.com/bao/uploaded/i8/1746960915/TB2EANUahz_F1JjSZFIXXcxHVXa_!!1746960915.jpg_280x380xz.jpg",
+      "buynum": "345"
+    },
+    {
+      "price": "22",
+      "title": "罗子君同款我的前半生马伊璃同款裤子唐晶同款黑色牛仔裤女九分裤 ",
+      "pic_url": "https://gw.alicdn.com/bao/uploaded/i2/2676053054/TB2RsG0XCqEJuJjy0FpXXcecVXa_!!2676053054.jpg_280x380xz.jpg",
+      "buynum": "3453"
+    },
+    {
+      "price": "999",
+      "title": "韩版时尚休闲套装秋装宽松连帽卫衣外套学生+阔腿九分裤两件套女 ",
+      "pic_url": "https://gw.alicdn.com/bao/uploaded/i6/1746960915/TB1JnNcSVXXXXbAaXXXXXXXXXXX_!!0-item_pic.jpg_280x380xz.jpg",
+      "buynum": "4234"
+    },
+    {
+      "price": "69",
+      "title": "2017秋季新款女装韩版气质上衣哈伦裤chic两件套洋气套装女时尚潮 ",
+      "pic_url": "https://gw.alicdn.com/bao/uploaded/i7/3117724374/TB16ZT7a.EIL1JjSZFFXXc5kVXa_!!0-item_pic.jpg_280x380xz.jpg",
+      "buynum": "3543"
+    },
+    {
+      "price": "123",
+      "title": "夏装女装韩版原宿风中长款bf宽松字母短袖T恤五分袖学生上衣体恤 ",
+      "pic_url": "https://gw.alicdn.com/bao/uploaded/i5/TB1h8xMRFXXXXX1XXXXXXXXXXXX_!!0-item_pic.jpg_280x380xz.jpg",
+      "buynum": "3543"
+    },
+    {
+      "price": "137",
+      "title": "挺有特色的设计，挺喜欢的呢，情侣装 买了两套 ",
+      "pic_url": "https://gw.alicdn.com/bao/uploaded/i3/2108996616/TB1juOxSVXXXXblXXXXXXXXXXXX_!!0-item_pic.jpg_280x380xz.jpg",
+      "buynum": "8737"
+    }
+  ]
+}
