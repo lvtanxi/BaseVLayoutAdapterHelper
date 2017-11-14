@@ -2,8 +2,6 @@ package com.mario.baseadapter.demo.ui;
 
 import android.content.res.AssetManager;
 import android.view.View;
-import android.widget.TextView;
-import android.widget.Toast;
 
 import com.alibaba.android.vlayout.LayoutHelper;
 import com.alibaba.android.vlayout.layout.GridLayoutHelper;
@@ -11,6 +9,8 @@ import com.alibaba.android.vlayout.layout.SingleLayoutHelper;
 import com.alibaba.android.vlayout.layout.StaggeredGridLayoutHelper;
 import com.google.gson.Gson;
 import com.mario.baseadapter.VBaseAdapter;
+import com.mario.baseadapter.VBaseSectionedAdapter;
+import com.mario.baseadapter.decoration.SectionDecoration;
 import com.mario.baseadapter.demo.R;
 import com.mario.baseadapter.demo.base.BaseRecyclerActivity;
 import com.mario.baseadapter.demo.data.AnalogData;
@@ -19,9 +19,11 @@ import com.mario.baseadapter.demo.image.CustomImageLoader;
 import com.mario.baseadapter.demo.model.BannerBean;
 import com.mario.baseadapter.demo.model.GridBean;
 import com.mario.baseadapter.demo.model.HomeData;
+import com.mario.baseadapter.demo.model.Section2Model;
 import com.mario.baseadapter.demo.model.WaterCargo;
 import com.mario.baseadapter.demo.util.RxSchedulers;
 import com.mario.baseadapter.holder.VBaseHolderHelper;
+import com.mario.baseadapter.listener.OnChildItemClickListener;
 import com.mario.baseadapter.listener.OnItemClickListener;
 import com.sunfusheng.marqueeview.MarqueeView;
 import com.youth.banner.Banner;
@@ -42,14 +44,16 @@ public class TaobaoActivity extends BaseRecyclerActivity {
     private VBaseAdapter<BannerBean> bannerAdapter;
     private VBaseAdapter<GridBean> gridAdapter;
     private VBaseAdapter<WaterCargo> waterfallAdapter;
-
+    private VBaseSectionedAdapter<Section2Model> mSectionedAdapter;
     @Override
     protected void initData() {
         super.initData();
+        setTitle("淘宝首页");
         initAdapter();
     }
 
     private void initAdapter() {
+        mRecyclerView.addItemDecoration(new SectionDecoration(R.layout.multilt_text_view));
         //各个adapter
         bannerAdapter = new VBaseAdapter<BannerBean>(R.layout.recyc_banner,new SingleLayoutHelper()) {
             @Override
@@ -80,24 +84,11 @@ public class TaobaoActivity extends BaseRecyclerActivity {
                 // 在代码里设置自己的动画
                 marqueeView1.startWithList(info1, R.anim.anim_bottom_in, R.anim.anim_top_out);
                 marqueeView2.startWithList(info2, R.anim.anim_bottom_in, R.anim.anim_top_out);
-
-                marqueeView1.setOnItemClickListener(new MarqueeView.OnItemClickListener() {
-                    @Override
-                    public void onItemClick(int position, TextView textView) {
-                        Toast.makeText(getApplicationContext(), textView.getText().toString(), Toast.LENGTH_SHORT).show();
-                    }
-                });
-                marqueeView2.setOnItemClickListener(new MarqueeView.OnItemClickListener() {
-                    @Override
-                    public void onItemClick(int position, TextView textView) {
-                        Toast.makeText(getApplicationContext(), textView.getText().toString(), Toast.LENGTH_SHORT).show();
-                    }
-                });
             }
         };
         newsAdapter.addItem("1");
 
-        gridAdapter = new VBaseAdapter<GridBean>(R.layout.recyc_grid, new GridLayoutHelper(5)) {
+        gridAdapter = new VBaseAdapter<GridBean>(R.layout.recyc_grid, getGridLayoutHelp()) {
             @Override
             protected void onBindItem(VBaseHolderHelper helper, GridBean gridBean, int position) {
                 helper.setText(R.id.func, gridBean.getFunction());
@@ -109,11 +100,31 @@ public class TaobaoActivity extends BaseRecyclerActivity {
                 .setHolder(WaterHolder.class)
                 .setLayoutHelper(getWaterHelper());
 
+        mSectionedAdapter = new VBaseSectionedAdapter<Section2Model>(R.layout.multilt_text_view, R.layout.recyc_one_item, new GridLayoutHelper(3)) {
+            @Override
+            public int getItemChildCount(int section) {
+                return getItem(section).getVideos().size();
+            }
+
+            @Override
+            public void onBindChildItem(VBaseHolderHelper helper, int section, int relativePosition,int absoPsition) {
+                Section2Model.Video video = getItem(section).getVideos().get(relativePosition);
+              CustomImageLoader.loadImage(TaobaoActivity.this,video.getImg(),helper.getImageView(R.id.imgItem));
+                helper.setText(R.id.tvItem, video.getName());
+            }
+
+            @Override
+            protected void onBindItem(VBaseHolderHelper helper, Section2Model section2Model, int position) {
+                helper.setText(R.id.tv, section2Model.getHeader())
+                        .setVisible(R.id.more, section2Model.isMroe());
+            }
+        };
 
         mDelegateAdapter.addAdapter(bannerAdapter);
         mDelegateAdapter.addAdapter(gridAdapter);
         mDelegateAdapter.addAdapter(newsAdapter);
         mDelegateAdapter.addAdapter(waterfallAdapter);
+        mDelegateAdapter.addAdapter(mSectionedAdapter);
     }
 
     private LayoutHelper getWaterHelper() {
@@ -139,6 +150,18 @@ public class TaobaoActivity extends BaseRecyclerActivity {
                 showToast(mData.getTitle() + "position:" + position);
             }
         });
+        mSectionedAdapter.addOnItemClickListener(new OnItemClickListener<Section2Model>() {
+            @Override
+            public void onItemClick(View view, int position, Section2Model mData) {
+               showToast( mData.getHeader() + "position:" + position);
+            }
+        });
+        mSectionedAdapter.addOnChildItemClickListener(new OnChildItemClickListener() {
+            @Override
+            public void onChildItemClick(int section, int relativePosition, int absolutePosition) {
+                showToast(mSectionedAdapter.getItem(section).getVideos().get(relativePosition).getName() + "position:" + relativePosition);
+            }
+        });
     }
 
     @Override
@@ -161,9 +184,24 @@ public class TaobaoActivity extends BaseRecyclerActivity {
                         bannerAdapter.addItem(homeData.getBanner());
                         gridAdapter.addItems(homeData.getGrid());
                         waterfallAdapter.addItems(homeData.getWatercargo());
+                        mSectionedAdapter.addItems(homeData.getSection2Models());
                     }
                 });
     }
+
+
+    private LayoutHelper getGridLayoutHelp() {
+        //设置Grid布局
+        GridLayoutHelper gridLayoutHelper = new GridLayoutHelper(5);
+        //是否自动扩展
+        gridLayoutHelper.setAutoExpand(false);
+     /*   gridLayoutHelper.setPadding(0, 16, 0, 16);
+        gridLayoutHelper.setVGap(16);// 控制子元素之间的垂直间距
+        gridLayoutHelper.setHGap(0);// 控制子元素之间的水平间距
+        gridLayoutHelper.setBgColor(Color.WHITE);*/
+        return gridLayoutHelper;
+    }
+
     private HomeData getJson() {
 
         StringBuilder stringBuilder = new StringBuilder();

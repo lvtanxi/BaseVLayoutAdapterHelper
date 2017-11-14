@@ -38,6 +38,7 @@ public class EmptyActivity extends BaseRecyclerActivity<String> {
     @Override
     protected void initData() {
         super.initData();
+        setTitle("空布局");
         mRefreshLayout.setEnableAutoLoadmore(true);
         mBaseAdapter = new VBaseAdapter<String>(R.layout.recyc_one_item) {
             @Override

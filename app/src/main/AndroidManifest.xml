@@ -20,6 +20,7 @@
         <activity android:name=".ui.HeraderAndFooterActivity"/>
         <activity android:name=".ui.SectionedActivity"/>
         <activity android:name=".ui.TaobaoActivity"/>
+        <activity android:name=".ui.OnePlusNLayoutActivity"/>
     </application>
 
 </manifest>

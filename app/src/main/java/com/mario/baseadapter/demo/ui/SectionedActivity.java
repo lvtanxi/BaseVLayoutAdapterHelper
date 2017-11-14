@@ -38,6 +38,7 @@ public class SectionedActivity extends BaseRecyclerActivity {
     @Override
     protected void initData() {
         super.initData();
+        setTitle("分组");
         mSectionedAdapter = new VBaseSectionedAdapter<Section2Model>(R.layout.multilt_text_view, R.layout.recyc_one_item, new GridLayoutHelper(3)) {
             @Override
             public int getItemChildCount(int section) {

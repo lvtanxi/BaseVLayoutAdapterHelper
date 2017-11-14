@@ -2,10 +2,11 @@ package com.mario.baseadapter.demo.data;
 
 
 import com.mario.baseadapter.demo.model.MainModel;
+import com.mario.baseadapter.demo.model.NormalModel;
 import com.mario.baseadapter.demo.model.Section2Model;
 import com.mario.baseadapter.demo.ui.EmptyActivity;
 import com.mario.baseadapter.demo.ui.HeraderAndFooterActivity;
-import com.mario.baseadapter.demo.ui.MainActivity;
+import com.mario.baseadapter.demo.ui.OnePlusNLayoutActivity;
 import com.mario.baseadapter.demo.ui.SectionedActivity;
 import com.mario.baseadapter.demo.ui.TaobaoActivity;
 
@@ -25,7 +26,7 @@ public class AnalogData {
         array.add(new MainModel(HeraderAndFooterActivity.class, "添加头部和脚"));
         array.add(new MainModel(EmptyActivity.class, "空布局"));
         array.add(new MainModel(SectionedActivity.class, "分组+空布局"));
-        array.add(new MainModel(MainActivity.class, "1拖N布局"));
+        array.add(new MainModel(OnePlusNLayoutActivity.class, "1拖N布局"));
         array.add(new MainModel(TaobaoActivity.class, "淘宝首页"));
         return array;
     }
@@ -58,6 +59,14 @@ public class AnalogData {
             list.add("this is item : " + i);
         }
         return list;
+    }
+
+    public static List<NormalModel> analogNormalModel() {
+        List<NormalModel> array = new ArrayList<>();
+        for (int i = 1; i < 4; i++) {
+            array.add(new NormalModel("this is title" + i, "this is detail" + i, ""));
+        }
+        return array;
     }
 
 }

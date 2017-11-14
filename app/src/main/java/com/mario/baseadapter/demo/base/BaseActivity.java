@@ -13,8 +13,7 @@ import android.widget.Toast;
 import com.mario.baseadapter.demo.R;
 
 
-
-public abstract class BaseActivity extends AppCompatActivity implements View.OnClickListener {
+public abstract class BaseActivity extends AppCompatActivity {
     protected TextView mTitle;
     protected TextView mMore;
     protected Toolbar mToolbar;
@@ -40,8 +39,6 @@ public abstract class BaseActivity extends AppCompatActivity implements View.OnC
         mTitle = $(R.id.toolbar_title);
         mMore = $(R.id.toolbar_more);
     }
-
-
 
 
     protected <T extends View> T $(@IdRes int viewId) {
@@ -99,14 +96,14 @@ public abstract class BaseActivity extends AppCompatActivity implements View.OnC
     }
 
 
-    @Override
-    public void onClick(View v) {
-        onClick(v, v.getId());
-    }
-
     public void showToast(String message) {
         if (null != message)
             Toast.makeText(this, message, Toast.LENGTH_SHORT).show();
     }
 
+    @Override
+    public void setTitle(CharSequence title) {
+        if (mTitle != null)
+            mTitle.setText(title);
+    }
 }

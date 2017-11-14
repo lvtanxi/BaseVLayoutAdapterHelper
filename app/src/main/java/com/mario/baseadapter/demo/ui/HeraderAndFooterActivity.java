@@ -33,6 +33,7 @@ public class HeraderAndFooterActivity extends BaseRecyclerActivity<String> {
     @Override
     protected void initData() {
         super.initData();
+        setTitle("添加头部和尾部View");
         initAdapter();
     }
 
