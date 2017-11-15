@@ -52,7 +52,7 @@ allprojects {
         //各个adapter
         bannerAdapter = new VBaseAdapter<BannerBean>(R.layout.recyc_banner) {
             @Override
-            protected void onBindItem(VBaseHolderHelper holder, BannerBean bannerBean, int position) {
+            protected void convert(VBaseHolderHelper holder, BannerBean bannerBean, int position) {
                 Banner banner = holder.getView(R.id.banner);
                 banner.setImages(bannerBean.getPic_url());
                 //设置图片加载器
@@ -68,7 +68,7 @@ allprojects {
         };
         gridAdapter = new VBaseAdapter<GridBean>(R.layout.recyc_grid, getGridLayoutHelp()) {
             @Override
-            protected void onBindItem(VBaseHolderHelper holder, GridBean gridBean, int position) {
+            protected void convert(VBaseHolderHelper holder, GridBean gridBean, int position) {
                 Glide.with(TaobaoActivity.this).load(gridBean.getPic_url()).centerCrop().diskCacheStrategy(DiskCacheStrategy.ALL).into(holder.getImageView(R.id.icon));
                 holder.setText(R.id.func, gridBean.getFunction());
             }
@@ -86,7 +86,7 @@ V-Layout 中自带了一个DelegateAdapter，可以添加很多个不同的Adapt
        .....
       
 ```
-VBaseSectionedAdapter 主要是针对分组的情况来做出的处理,json的格式如: [data1:[{},{}],data2:[{},{}]]，需要重写onBindItem和onBindChildItem方法
+VBaseSectionedAdapter 主要是针对分组的情况来做出的处理,json的格式如: [data1:[{},{}],data2:[{},{}]]，需要重写convert和convertChildItem方法
 <img src="screenshot/adapter03.png" width="320px"/>
 
 ##（4）添加HeaderView、FooterView

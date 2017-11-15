@@ -46,14 +46,14 @@ public class SectionedActivity extends BaseRecyclerActivity {
             }
 
             @Override
-            public void onBindChildItem(VBaseHolderHelper helper, int section, int relativePosition, int absoPsition) {
+            public void convertChildItem(VBaseHolderHelper helper, int section, int relativePosition, int absoPsition) {
                 Section2Model.Video video = getItem(section).getVideos().get(relativePosition);
                 helper.setText(R.id.tvItem, video.getName())
                       .setText(R.id.tvSubItem,video.getImg());
             }
 
             @Override
-            protected void onBindItem(VBaseHolderHelper helper, Section2Model section2Model, int position) {
+            protected void convert(VBaseHolderHelper helper, Section2Model section2Model, int position) {
                 helper.setText(R.id.tv, section2Model.getHeader())
                         .setVisible(R.id.more, section2Model.isMroe());
             }

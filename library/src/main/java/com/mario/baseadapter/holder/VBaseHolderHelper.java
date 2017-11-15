@@ -62,7 +62,7 @@ public class VBaseHolderHelper {
      *
      * @param onItemChildClickListener
      */
-    public void setOnItemChildClickListener(OnItemChildClickListener onItemChildClickListener) {
+    public void addOnItemChildClickListener(OnItemChildClickListener onItemChildClickListener) {
         mOnItemChildClickListener = onItemChildClickListener;
     }
 

@@ -45,7 +45,7 @@ public class VBaseHolder<T> extends RecyclerView.ViewHolder {
         this.mPosition = position;
     }
 
-    public void onBindItem(VBaseHolderHelper helper, T t, int position) {
+    public void convert(VBaseHolderHelper helper, T t, int position) {
 
     }
 

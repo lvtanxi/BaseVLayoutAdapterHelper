@@ -39,7 +39,7 @@ public class OnePlusNLayoutActivity extends BaseRecyclerActivity<NormalModel> {
     private void initAdapter() {
         mBaseAdapter= new VBaseAdapter<NormalModel>(R.layout.recyc_one_item) {
             @Override
-            protected void onBindItem(VBaseHolderHelper helper, NormalModel model, int position) {
+            protected void convert(VBaseHolderHelper helper, NormalModel model, int position) {
                 helper.setText(R.id.tvSubItem, model.getTitle());
             }
         };

@@ -8,6 +8,7 @@ import com.alibaba.android.vlayout.DelegateAdapter;
 import com.alibaba.android.vlayout.LayoutHelper;
 import com.alibaba.android.vlayout.layout.GridLayoutHelper;
 import com.alibaba.android.vlayout.layout.LinearLayoutHelper;
+import com.alibaba.android.vlayout.layout.SingleLayoutHelper;
 import com.mario.baseadapter.holder.VBaseHolder;
 import com.mario.baseadapter.holder.VBaseHolderHelper;
 import com.mario.baseadapter.listener.OnItemChildClickListener;
@@ -171,7 +172,7 @@ public class VBaseAdapter<T> extends DelegateAdapter.Adapter<VBaseHolder<T>> {
         //绑定两个监听事件
         if (baseHolder != null) {
             baseHolder.addOnItemClickListener(mItemClickListener);
-            baseHolder.getViewHolderHelper().setOnItemChildClickListener(mItemChildClickListener);
+            baseHolder.getViewHolderHelper().addOnItemChildClickListener(mItemChildClickListener);
         }
         return baseHolder;
     }
@@ -193,9 +194,9 @@ public class VBaseAdapter<T> extends DelegateAdapter.Adapter<VBaseHolder<T>> {
         holder.setData(position, getItem(position));
         //判断是什么形态的VBaseHolder，然后渲染数据
         if (mClazz == null)
-            onBindItem(holder.getViewHolderHelper(), getItem(position), position);
+            convert(holder.getViewHolderHelper(), getItem(position), position);
         else
-            holder.onBindItem(holder.getViewHolderHelper(), getItem(position), position);
+            holder.convert(holder.getViewHolderHelper(), getItem(position), position);
     }
 
     /**
@@ -280,11 +281,13 @@ public class VBaseAdapter<T> extends DelegateAdapter.Adapter<VBaseHolder<T>> {
     /**
      * 填数据
      */
-    protected void onBindItem(VBaseHolderHelper helper, T t, int position) {
+    protected void convert(VBaseHolderHelper helper, T t, int position) {
     }
 
     @Override
     public int getItemCount() {
+        if(mLayoutHelper instanceof SingleLayoutHelper)
+            return 1;
         return mDatas.size();
     }
 

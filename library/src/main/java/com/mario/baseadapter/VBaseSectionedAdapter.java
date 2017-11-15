@@ -65,7 +65,7 @@ public abstract class VBaseSectionedAdapter<M> extends VBaseAdapter<M> {
             //设置一个Sectioned给holder.itemView
             holder.itemView.setTag(position);
             //渲染条目
-            onBindItem(holder.getViewHolderHelper(), getItem(position), position);
+            convert(holder.getViewHolderHelper(), getItem(position), position);
         } else {
             //获取Sectioned
             final int section = getSectionIndex(position);
@@ -76,7 +76,7 @@ public abstract class VBaseSectionedAdapter<M> extends VBaseAdapter<M> {
             //标识一下是子view
             holder.itemView.setContentDescription("child");
             //渲染ziview
-            onBindChildItem(holder.getViewHolderHelper(), section, mPositionMap.get(position), absPos);
+            convertChildItem(holder.getViewHolderHelper(), section, mPositionMap.get(position), absPos);
         }
     }
 
@@ -134,7 +134,7 @@ public abstract class VBaseSectionedAdapter<M> extends VBaseAdapter<M> {
     /**
      * 获取条目中子View的个数
      */
-    public abstract int getItemChildCount(int section);
+    protected abstract int getItemChildCount(int section);
 
     /**
      * 渲染条子View
@@ -144,7 +144,7 @@ public abstract class VBaseSectionedAdapter<M> extends VBaseAdapter<M> {
      * @param childPosition 条目下的childPosition
      * @param absoPsition   据对position
      */
-    public abstract void onBindChildItem(VBaseHolderHelper helper, int section, int childPosition, int absoPsition);
+   protected abstract void convertChildItem(VBaseHolderHelper helper, int section, int childPosition, int absoPsition);
 
     /**
      * 判断是否是条目

@@ -57,7 +57,7 @@ public class TaobaoActivity extends BaseRecyclerActivity {
         //各个adapter
         bannerAdapter = new VBaseAdapter<BannerBean>(R.layout.recyc_banner,new SingleLayoutHelper()) {
             @Override
-            protected void onBindItem(VBaseHolderHelper holder, BannerBean bannerBean, int position) {
+            protected void convert(VBaseHolderHelper holder, BannerBean bannerBean, int position) {
                 Banner banner = holder.getView(R.id.banner);
                 banner.setImages(bannerBean.getPic_url());
                 //设置图片加载器
@@ -67,7 +67,7 @@ public class TaobaoActivity extends BaseRecyclerActivity {
         };
         VBaseAdapter<String> newsAdapter = new VBaseAdapter<String>(R.layout.recyc_news,new SingleLayoutHelper()) {
             @Override
-            protected void onBindItem(VBaseHolderHelper holder, String s, int position) {
+            protected void convert(VBaseHolderHelper holder, String s, int position) {
                 MarqueeView marqueeView1 = holder.getView(R.id.marqueeView1);
                 MarqueeView marqueeView2 = holder.getView(R.id.marqueeView2);
 
@@ -90,7 +90,7 @@ public class TaobaoActivity extends BaseRecyclerActivity {
 
         gridAdapter = new VBaseAdapter<GridBean>(R.layout.recyc_grid, getGridLayoutHelp()) {
             @Override
-            protected void onBindItem(VBaseHolderHelper helper, GridBean gridBean, int position) {
+            protected void convert(VBaseHolderHelper helper, GridBean gridBean, int position) {
                 helper.setText(R.id.func, gridBean.getFunction());
                 CustomImageLoader.loadImage(TaobaoActivity.this,gridBean.getPic_url(),helper.getImageView(R.id.icon));
             }
@@ -107,14 +107,14 @@ public class TaobaoActivity extends BaseRecyclerActivity {
             }
 
             @Override
-            public void onBindChildItem(VBaseHolderHelper helper, int section, int relativePosition,int absoPsition) {
+            public void convertChildItem(VBaseHolderHelper helper, int section, int relativePosition,int absoPsition) {
                 Section2Model.Video video = getItem(section).getVideos().get(relativePosition);
               CustomImageLoader.loadImage(TaobaoActivity.this,video.getImg(),helper.getImageView(R.id.imgItem));
                 helper.setText(R.id.tvItem, video.getName());
             }
 
             @Override
-            protected void onBindItem(VBaseHolderHelper helper, Section2Model section2Model, int position) {
+            protected void convert(VBaseHolderHelper helper, Section2Model section2Model, int position) {
                 helper.setText(R.id.tv, section2Model.getHeader())
                         .setVisible(R.id.more, section2Model.isMroe());
             }

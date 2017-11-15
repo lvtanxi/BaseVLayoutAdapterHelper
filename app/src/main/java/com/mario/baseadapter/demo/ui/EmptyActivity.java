@@ -42,7 +42,7 @@ public class EmptyActivity extends BaseRecyclerActivity<String> {
         mRefreshLayout.setEnableAutoLoadmore(true);
         mBaseAdapter = new VBaseAdapter<String>(R.layout.recyc_one_item) {
             @Override
-            protected void onBindItem(VBaseHolderHelper helper, String s, int position) {
+            protected void convert(VBaseHolderHelper helper, String s, int position) {
                 helper.setText(R.id.tvItem,s)
                 .setItemChildClickListener(R.id.imgItem);
             }

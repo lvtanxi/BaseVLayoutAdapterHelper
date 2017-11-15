@@ -23,7 +23,7 @@ public class MainActivity extends BaseRecyclerActivity<MainModel> {
         super.initData();
         baseAdapter = new VBaseAdapter<MainModel>(R.layout.recyc_one_item) {
             @Override
-            protected void onBindItem(VBaseHolderHelper helper, MainModel mainModel, int position) {
+            protected void convert(VBaseHolderHelper helper, MainModel mainModel, int position) {
                 helper.setText(R.id.tvItem, mainModel.getName());
             }
         };
