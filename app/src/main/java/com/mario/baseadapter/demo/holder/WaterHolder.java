@@ -19,7 +19,7 @@ public class WaterHolder extends VBaseHolder<WaterCargo> {
     }
 
     @Override
-    public void onBindItem(VBaseHolderHelper helper, WaterCargo waterCargo, int position) {
+    public void convert(VBaseHolderHelper helper, WaterCargo waterCargo, int position) {
         ImageView mPic=helper.getView(R.id.pic);
         ViewGroup.LayoutParams params =mPic.getLayoutParams();
         params.width = ScreenUtil.getScreenWidth(helper.getConvertView().getContext()) / 2 - 2;

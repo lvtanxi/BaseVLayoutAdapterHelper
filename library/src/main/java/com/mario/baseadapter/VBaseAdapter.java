@@ -17,6 +17,7 @@ import com.mario.baseadapter.wrapper.VEmptyWrapper;
 import com.mario.baseadapter.wrapper.VHeaderFooterWrapper;
 
 import java.lang.reflect.Constructor;
+import java.lang.reflect.Modifier;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -45,6 +46,8 @@ public class VBaseAdapter<T> extends DelegateAdapter.Adapter<VBaseHolder<T>> {
     //统计有多少头布局
     private int mHeaderCount;
 
+    private boolean mIsSingleLayoutHelper;
+
     /**
      * 构造函数分了四种
      * 1、手动设置VBaseHolder
@@ -69,6 +72,7 @@ public class VBaseAdapter<T> extends DelegateAdapter.Adapter<VBaseHolder<T>> {
         this.mLayoutHelper = layoutHelper;
         this.mResLayout = resLayout;
         this.mDatas = mDatas;
+        this.mIsSingleLayoutHelper = layoutHelper instanceof SingleLayoutHelper;
     }
 
 
@@ -92,6 +96,7 @@ public class VBaseAdapter<T> extends DelegateAdapter.Adapter<VBaseHolder<T>> {
         }
         addItems(items);
     }
+
     /**
      * 添加 item选项
      */
@@ -122,6 +127,7 @@ public class VBaseAdapter<T> extends DelegateAdapter.Adapter<VBaseHolder<T>> {
      */
     public VBaseAdapter<T> setLayoutHelper(LayoutHelper layoutHelper) {
         this.mLayoutHelper = layoutHelper;
+        this.mIsSingleLayoutHelper = layoutHelper instanceof SingleLayoutHelper;
         return this;
     }
 
@@ -158,7 +164,11 @@ public class VBaseAdapter<T> extends DelegateAdapter.Adapter<VBaseHolder<T>> {
         //获取ItemView
         View inflate = LayoutInflater.from(parent.getContext()).inflate(viewType, parent, false);
         //判断是否是穿的VBaseHolder
-        if (mClazz != null)
+        if (mClazz != null) {
+            if (mClazz.isMemberClass()) {
+                if ((mClazz.getModifiers() != (Modifier.PUBLIC | Modifier.STATIC)) && mClazz.getModifiers() != (Modifier.PUBLIC | Modifier.STATIC | Modifier.FINAL))
+                    throw new RuntimeException(mClazz + " 是内部类，需要public static 修饰");
+            }
             try {
                 //根据VBaseHolder的构造器，反射生成VBaseHolder实体对象
                 Constructor<? extends VBaseHolder> mClazzConstructor = mClazz.getConstructor(View.class);
@@ -167,7 +177,7 @@ public class VBaseAdapter<T> extends DelegateAdapter.Adapter<VBaseHolder<T>> {
             } catch (Exception e) {
                 e.printStackTrace();
             }
-        else
+        } else
             baseHolder = new VBaseHolder<>(inflate);
         //绑定两个监听事件
         if (baseHolder != null) {
@@ -249,7 +259,8 @@ public class VBaseAdapter<T> extends DelegateAdapter.Adapter<VBaseHolder<T>> {
     }
 
     /**
-     *  添加空View
+     * 添加空View
+     *
      * @param isEmptyWrapper 因为有两个包装类有空布局，所以判断用哪一个
      */
     public void addEmptyView(View emptyView, boolean isEmptyWrapper) {
@@ -258,8 +269,9 @@ public class VBaseAdapter<T> extends DelegateAdapter.Adapter<VBaseHolder<T>> {
         else
             getHeaderFooterWrapper().addEmptyView(emptyView);
     }
+
     /**
-     *  获取空View的包装类
+     * 获取空View的包装类
      */
     private VEmptyWrapper getEmptyWrapper() {
         if (mTargetAdapter == null || !(mTargetAdapter instanceof VEmptyWrapper)) {
@@ -286,7 +298,7 @@ public class VBaseAdapter<T> extends DelegateAdapter.Adapter<VBaseHolder<T>> {
 
     @Override
     public int getItemCount() {
-        if(mLayoutHelper instanceof SingleLayoutHelper)
+        if (mIsSingleLayoutHelper && !dataIsEmpty())
             return 1;
         return mDatas.size();
     }
@@ -299,7 +311,7 @@ public class VBaseAdapter<T> extends DelegateAdapter.Adapter<VBaseHolder<T>> {
     }
 
     /**
-     *清除所有数据
+     * 清除所有数据
      */
     public void clearData() {
         mDatas.clear();
@@ -329,6 +341,10 @@ public class VBaseAdapter<T> extends DelegateAdapter.Adapter<VBaseHolder<T>> {
                 }
             });
         }
+    }
+
+    public boolean dataIsEmpty() {
+        return mDatas == null || mDatas.size() == 0;
     }
 
 }

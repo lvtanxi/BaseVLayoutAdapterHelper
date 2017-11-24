@@ -23,7 +23,7 @@ allprojects {
 ```
         VBaseAdapter<NormalModel>  mBaseAdapter= new VBaseAdapter<NormalModel>(R.layout.item_main) {
             @Override
-            protected void onBindItem(VBaseHolderHelper helper, NormalModel model, int position) {
+            protected void convert(VBaseHolderHelper helper, NormalModel model, int position) {
                 helper.setText(R.id.main_test, model.getTitle());
             }
         };
@@ -35,7 +35,7 @@ allprojects {
         mRecycler.setAdapter(delegateAdapter);
         
 ```
-在onBindItem方法中完成数据,只需要简单的将Adapter继承VBaseAdapter，复写onBindItem方法即可。省去了自己编写ViewHolder等大量的重复的代码。
+在convert方法中完成数据,只需要简单的将Adapter继承VBaseAdapter，复写convert方法即可。省去了自己编写ViewHolder等大量的重复的代码。
 如果想自定义ViewHolder。就请ViewHolder继承VBaseHolder，然后完成相应的方法复写。
 <img src="screenshot/adapter01.png" width="320px"/>
 
