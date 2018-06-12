@@ -1,0 +1,50 @@
+<resources>
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="colorPrimary">@color/blue</item>
+        <item name="colorPrimaryDark">@color/blue</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="android:windowBackground">@color/WINDOW_BACKGROUND</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="android:textSize">14sp</item>
+        <item name="android:textColorSecondary">@color/dividerColor</item>
+        <item name="android:textColorTertiary">@color/black</item>
+        <item name="android:windowIsTranslucent">true</item>
+    </style>
+    <style name="ToolbarStyle">
+        <item name="android:id">@id/toolbar</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">?actionBarSize</item>
+        <item name="android:background">@color/blue</item>
+        <item name="navigationIcon">@drawable/btn_return</item>
+    </style>
+
+    <style name="ToolbarRelat">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">?actionBarSize</item>
+        <item name="android:background">@color/blue</item>
+    </style>
+
+    <style name="MatchWrap.ToolbarTitle">
+        <item name="android:id">@id/toolbar_title</item>
+        <item name="android:layout_centerVertical">true</item>
+        <item name="android:layout_marginRight">?actionBarSize</item>
+        <item name="android:gravity">center</item>
+        <item name="android:singleLine">true</item>
+        <item name="android:ellipsize">end</item>
+        <item name="android:textColor">@android:color/white</item>
+        <item name="android:textSize">18sp</item>
+    </style>
+    <style name="WrapMatch.ToolbarMore">
+        <item name="android:id">@id/toolbar_more</item>
+        <item name="android:layout_alignParentRight">true</item>
+        <item name="android:layout_centerVertical">true</item>
+        <item name="android:gravity">center</item>
+        <item name="android:paddingLeft">10dp</item>
+        <item name="android:paddingRight">15dp</item>
+        <item name="android:textColor">@android:color/white</item>
+        <item name="android:background">?selectableItemBackgroundBorderless</item>
+    </style>
+</resources>

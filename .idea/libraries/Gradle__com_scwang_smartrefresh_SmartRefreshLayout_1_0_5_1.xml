@@ -1,0 +1,12 @@
+<component name="libraryTable">
+  <library name="Gradle: com.scwang.smartrefresh:SmartRefreshLayout-1.0.5.1">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/SmartRefreshLayout-1.0.5.1.aar/63575bc3375fd78ea0b7cd51fa84a5b4/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/SmartRefreshLayout-1.0.5.1.aar/63575bc3375fd78ea0b7cd51fa84a5b4/res" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.scwang.smartrefresh/SmartRefreshLayout/1.0.5.1/366fe7957621c8c0a665d202137b38c7696ad219/SmartRefreshLayout-1.0.5.1-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

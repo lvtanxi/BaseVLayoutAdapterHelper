@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+    <com.scwang.smartrefresh.layout.SmartRefreshLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@id/common_refresh_layout"
+        style="@style/MatchMatch">
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@id/common_recyclerview"
+            style="@style/MatchMatch"
+            android:overScrollMode="never"
+            android:scrollbars="none"/>
+    </com.scwang.smartrefresh.layout.SmartRefreshLayout>

@@ -1,0 +1,35 @@
+apply plugin: 'com.android.library'
+apply plugin: 'com.github.dcendents.android-maven'
+
+group='com.github.lvtanxi'
+
+android {
+    compileSdkVersion rootProject.BUILD_SDK_VERSION
+
+    defaultConfig {
+        minSdkVersion rootProject.MIN_SDK_VERSION
+        targetSdkVersion rootProject.TARGET_SDK_VERSION
+        versionCode 4
+        versionName "1.0.3"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation "com.android.support:appcompat-v7:$SUPPORT_VERSION"
+    implementation "com.android.support:design:$SUPPORT_VERSION"
+    implementation "com.android.support:recyclerview-v7:$SUPPORT_VERSION"
+    implementation ('com.alibaba.android:vlayout:1.2.8@aar') {
+        transitive = true
+    }
+}
